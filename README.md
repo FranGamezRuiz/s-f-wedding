@@ -1,5 +1,7 @@
 # Astro Starter Kit: Basics
 
+https://clasico.miwebdding.com/
+
 ```sh
 npm create astro@latest -- --template basics
 ```

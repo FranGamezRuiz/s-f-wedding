@@ -1,0 +1,189 @@
+---
+---
+<div class="pre-page" id="pre_page">
+    <img src="images/mw-welcome-graph-left.svg" class="left-graph wow fadeInUp" data-wow-delay="1.5s" id="left_graph" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeInUp;">
+    <img src="images/mw-welcome-graph-left.svg" class="rigth-graph wow fadeInUp" data-wow-delay="1.5s" id="rigth_graph" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeInUp;">
+    <img src="images/mw-env-middle-layer.png" class="envelope wow fadeIn" data-wow-delay="1.5s" id="env_middle" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeIn;">
+    <img src="images/mw-env-bottom-layer.png" class="envelope wow slideInUp" data-wow-delay="1.5s" id="env_bottom" style="visibility: visible; animation-delay: 1.5s; animation-name: slideInUp;">
+    <img src="images/mw-env-top-layer.png" class="envelope wow slideInDown" data-wow-delay="1.5s" id="env_top" style="visibility: visible; animation-delay: 1.5s; animation-name: slideInDown;">
+    <div class="inner wow fadeIn" data-wow-delay="1.5s" id="inner_elements" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeIn;">
+        <span class="icon">
+            <div class="pre-page-content">
+                <br><br>
+                <h1>Silvia &amp; Fran</h1>
+                <p class="welcome-text-p">Se casan y te invitan a celebrar con ellos este gran día.</p>
+                <br>
+            </div>
+            <img src="images/sello.png" id="btn-sello" class="welcome-element stamp animate-zoom-in-out">
+        </span>
+    </div>
+</div>
+
+<style>
+.pre-page {
+    background-color: rgba(255, 255, 255, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.pre-page .left-graph {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 11;
+    width: 35vw;
+}
+.rigth-graph {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 11;
+    width: 35vw;
+    transform: rotate(180deg);
+}
+
+#env_middle {
+    vertical-align: bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    opacity: 0.5;
+    object-fit: fill;
+}
+#env_bottom {
+    vertical-align: bottom;
+    width: 100%;
+    bottom: 0%;
+    position: absolute;
+    right: 0px;
+    opacity: 0.5;
+    overflow: visible;
+}
+#env_top {
+    width: 100%;
+    vertical-align: top;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    opacity: 0.5;
+    overflow: visible;
+}
+pre-page .inner {
+    display: flex;
+    height: 100vh;
+}
+
+.pre-page .inner {
+    display: flex;
+    height: 100vh;
+}
+.pre-page .icon {
+    display: block;
+    margin: auto;
+}
+.pre-page-content {
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+    z-index: 16;
+    font-family: 'Dancing Script Variable';
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1em;
+    }
+}
+.stamp {
+    position: relative;
+    width: 120px;
+    margin: auto;
+    display: flex;
+    z-index: 11;
+}
+.animate-zoom-in-out {
+    animation: zoom-in-zoom-out 2s ease infinite;
+}
+img, svg {
+    vertical-align: middle;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+animate-zoom-in-out {
+    animation: zoom-in-zoom-out 2s ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(0.75,0.75);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+    
+}
+@media (max-width: 480px) {
+    .pre-page .left-graph {
+        height: 50vw;
+        width: 70vw;
+    }
+    .rigth-graph {
+        height: 50vw;
+        width: 70vw;
+    }
+}
+@media (max-width: 991px) {
+    #env_middle {
+        display: none;
+    }
+    #env_top, #env_bottom {
+        height: 35vh;
+        width: 100%;
+        margin: auto;
+        object-fit: cover;
+    }
+    #env_top, #env_bottom {
+        height: 35vh;
+        width: 100%;
+        margin: auto;
+        object-fit: cover;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+</style>
+
+<script>
+   console.log("Astro page loaded");
+		const button = document.getElementById('btn-sello') as HTMLElement;
+        button.addEventListener('click', () => {
+            fadeOutWelcomeElements();
+        });
+
+    function fadeOutWelcomeElements() {
+        const element = document.getElementById('pre_page') as HTMLElement;
+        element.style.animation = 'fadeOut 1s ease';
+        setTimeout(() => {
+            element.style.display = 'none';
+        }, 1000);
+    }
+
+</script>
