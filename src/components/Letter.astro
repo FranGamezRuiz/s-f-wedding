@@ -47,6 +47,9 @@
     width: 35vw;
     transform: rotate(180deg);
 }
+#inner_elements {
+    animation: fadeIn 4s ease;
+}
 
 #env_middle {
     vertical-align: bottom;
@@ -66,6 +69,7 @@
     right: 0px;
     opacity: 0.5;
     overflow: visible;
+    animation: slideInDownInitial 3s ease;
 }
 #env_top {
     width: 100%;
@@ -75,6 +79,7 @@
     right: 0px;
     opacity: 0.5;
     overflow: visible;
+    animation: slideInUpInitial 3s ease;
 }
 pre-page .inner {
     display: flex;
@@ -155,6 +160,15 @@ animate-zoom-in-out {
         object-fit: cover;
     }
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
 @keyframes fadeOut {
     0% {
         opacity: 1;
@@ -163,7 +177,23 @@ animate-zoom-in-out {
         opacity: 0;
     }
 }
+@keyframes slideInDownInitial {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
+@keyframes slideInUpInitial {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 @keyframes slideInDown {
     0% {
         transform: translateY(0%);
@@ -205,7 +235,7 @@ animate-zoom-in-out {
         env_top.style.animation = 'slideInUp 2s ease';
         setTimeout(() => {
           element.style.display = 'none';
-        }, 1000);
+        }, 3000);
     }
 
 </script>
