@@ -1,3 +1,67 @@
 ---
 ---
-<h1>History</h1>
+<div>
+  <h2>Nuestra historia</h2>
+  <p>Un Sí y una decisión que tomamos juntos. Nuestro amor ha crecido en nosotros, ha madurado y florecido. Así comienza una nueva etapa en nuestras vidas. Somos aventureros, dedicados, fuertes de carácter; los desafíos que hemos enfrentado nos han ayudado a crecer y madurar. Tan sólo podemos decir que nuestra vida en estos momentos se encuentra completa y estamos listos para compartir el resto de nuestros días juntos.</p>
+</div>
+
+<style>
+    div {
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        margin: 0 25rem 0 25rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #d3cac3;
+        color: #303030;
+        animation: fadeIn 4s ease;
+    }
+    h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+        font-family: 'Dancing Script Variable';
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000000, #595959, #000000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: gradient 5s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgb(59 59 59 / 50%);
+    }
+    p {
+        font-family: fantasy;
+        text-align: center;
+    }
+
+    @media (max-width: 1600px) {
+        div {
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        div {
+            margin: 1rem;
+        }
+    }
+    @keyframes gradient {
+        0% {
+            background-position: -500%;
+        }
+        100% {
+            background-position: 500%;
+        }
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>

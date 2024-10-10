@@ -1,3 +1,84 @@
 ---
 ---
-<h1>Information</h1>
+<div>
+    <img src="images/ceremonia.webp">
+    <card>
+        <header>
+            Finca Eslava
+        </header>
+        <body>
+            <p>18 de Octubre de 2025</p>
+            
+            <p>Antequera, Málaga</p>
+            <a
+                target="_blank"
+                href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd728fde25ef650b:0xd4c347d29d5af2ec?sa=X&ved=1t:8290&ictx=111"
+            >Ver mapa</a>
+        </body>
+    </card>
+</div>
+
+<style>
+    div {
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        color: #303030;
+        animation: fadeIn 4s ease;
+        margin-top: 40px;
+    }
+    img {
+        width: 50%;
+        aspect-ratio: 16 / 9;
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    }
+    @media (max-width: 1600px) {
+        img {
+            width: 75%;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        img {
+            width: 100%;
+        }
+    }
+    card {
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        margin: 1rem;
+        color: #303030;
+        animation: fadeIn 4s ease;
+        p {
+            font-family: fantasy;
+            font-weight: 300;
+        }
+        header {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Dancing Script Variable';
+            position: relative;
+            overflow: hidden;
+        }
+        a {
+            margin-top: 20px;
+            color: #303030;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-family: 'Dancing Script Variable';
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: #d3cac388;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            
+            &:hover {
+                background-color: #d3cac3;
+                transform: scale(1.1);
+            }
+        }
+    }
+</style>

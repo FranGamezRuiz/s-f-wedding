@@ -1,3 +1,68 @@
 ---
 ---
-<h1>Calendar</h1>
+<div>
+    <card>
+        <header>
+            Agrégalo a tu calendario
+        </header>
+        <div>
+            <a
+                target="_blank"
+                href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd728fde25ef650b:0xd4c347d29d5af2ec?sa=X&ved=1t:8290&ictx=111"
+            >IOS</a>
+            <a
+                target="_blank"
+                href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd728fde25ef650b:0xd4c347d29d5af2ec?sa=X&ved=1t:8290&ictx=111"
+            >Google</a>
+        </div>
+    </card>
+</div>
+
+<style>
+    div {
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        color: #303030;
+        animation: fadeIn 4s ease;
+        
+    }
+    card {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        padding: 1rem;
+        margin: 1rem;
+        color: #303030;
+        animation: fadeIn 4s ease;
+        div {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        header {
+            font-size: 1.75rem;
+            font-family: 'Dancing Script Variable';
+            position: relative;
+            overflow: hidden;
+        }
+        a {
+            margin-top: 20px;
+            color: #303030;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-family: fantasy;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: #d3cac388;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            
+            &:hover {
+                background-color: #d3cac3;
+                transform: scale(1.1);
+            }
+        }
+    }
+</style>
