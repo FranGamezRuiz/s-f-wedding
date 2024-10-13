@@ -1,7 +1,4 @@
-# Astro Starter Kit: Basics
-
-https://clasico.miwebdding.com/
-https://molaboda.com/landing/
+# Astro Starter Kit: 
 
 ```sh
 npm create astro@latest -- --template basics
