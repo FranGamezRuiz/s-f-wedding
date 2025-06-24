@@ -14,7 +14,10 @@
                 <p class="welcome-text-p">Se casan y te invitan a celebrar con ellos este gran día.</p>
                 <br>
             </div>
-            <img src="/s-f-wedding/images/sello.png" id="btn-sello" class="welcome-element stamp animate-zoom-in-out">
+            <div id="btn-sello" class="welcome-element stamp">
+                <img src="/s-f-wedding/images/sello.png" class="animate-zoom-in-out">
+                <p class="welcome-text-p">Pulse para abrir</p>
+            </div>
         </span>
     </div>
 </div>
@@ -31,6 +34,7 @@
     left: 0;
     top: 0;
     z-index: 999;
+    overflow: hidden; /* Evitar scroll dentro del componente */
 }
 .pre-page .left-graph {
     position: absolute;
@@ -107,12 +111,21 @@ pre-page .inner {
         margin-bottom: 1em;
     }
 }
+.welcome-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Dancing Script Variable';
+}
 .stamp {
     position: relative;
     width: 120px;
     margin: auto;
     display: flex;
     z-index: 11;
+    cursor: pointer; /* Indicar que es clickeable */
 }
 .animate-zoom-in-out {
     animation: zoom-in-zoom-out 2s ease infinite;
@@ -221,21 +234,26 @@ animate-zoom-in-out {
 
 <script>
    console.log("Astro page loaded");
-		const button = document.getElementById('btn-sello') as HTMLElement;
-        button.addEventListener('click', () => {
-            fadeOutWelcomeElements();
-        });
+   
+   // Bloquear el scroll al cargar la página
+   document.body.style.overflow = 'hidden';
+   
+   const button = document.getElementById('btn-sello') as HTMLElement;
+   button.addEventListener('click', () => {
+       fadeOutWelcomeElements();
+       // Desbloquear el scroll cuando se pulsa el sello
+       document.body.style.overflow = 'auto';
+   });
 
-    function fadeOutWelcomeElements() {
-        const element = document.getElementById('pre_page') as HTMLElement;
-        element.style.animation = 'fadeOut 3s ease';
-        const env_bottom = document.getElementById('env_bottom') as HTMLElement;
-        env_bottom.style.animation = 'slideInDown 2s ease';
-        const env_top = document.getElementById('env_top') as HTMLElement;
-        env_top.style.animation = 'slideInUp 2s ease';
-        setTimeout(() => {
-          element.style.display = 'none';
-        }, 3000);
-    }
-
+   function fadeOutWelcomeElements() {
+       const element = document.getElementById('pre_page') as HTMLElement;
+       element.style.animation = 'fadeOut 3s ease';
+       const env_bottom = document.getElementById('env_bottom') as HTMLElement;
+       env_bottom.style.animation = 'slideInDown 2s ease';
+       const env_top = document.getElementById('env_top') as HTMLElement;
+       env_top.style.animation = 'slideInUp 2s ease';
+       setTimeout(() => {
+         element.style.display = 'none';
+       }, 3000);
+   }
 </script>
